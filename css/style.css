@@ -1,24 +1,23 @@
 :root {
     color-scheme: light dark;
     --bg: #ffffff;
-    --text: #16191d;
-    --muted: #576270;
-    --accent: #123b6d;
-    --soft: #e7eef7;
-    --line: #d8e0e8;
-    --surface: #f2f5f8;
+    --text: #2c3e50;
+    --muted: #6c7a89;
+    --accent: #3a7bd5; /* Ніжний приємний синій замість темного */
+    --soft: #e8f1fc;
+    --line: #d2e3fc;
+    --surface: #f4f8fb;
 }
-
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #10151b;
-        --text: #e8eef5;
-        --muted: #9aa9b8;
-        --accent: #6fb2e8;
-        --soft: #18202a;
-        --line: #263241;
-        --surface: #18202a;
+        --bg: #121820;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #5ba4fc;
+        --soft: #1e293b;
+        --line: #334155;
+        --surface: #1e293b;
     }
 }
 
@@ -64,7 +63,6 @@ body {
     padding: 1rem;
     background: var(--accent);
     color: #fff;
-
 }
 
 .site-logo {
@@ -76,14 +74,19 @@ body {
 
 .site-nav__list {
     display: flex;
-    gap: 1rem;
-    overflow-x: auto;
+    gap: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .site-nav a {
     color: #fff;
     text-decoration: none;
     white-space: nowrap;
+    transition: opacity 200ms ease;
+}
+
+.site-nav a:hover {
+    opacity: 0.8;
 }
 
 .site-nav a[aria-current="page"] {
@@ -92,16 +95,7 @@ body {
     padding-bottom: 2px;
 }
 
-.content {
-    padding: 1.5rem 1rem;
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
 h2 {
-
     font-size: clamp(1.375rem, 1.1rem + 1.4vw, 2.25rem);
     color: var(--accent);
     border-bottom: 2px solid var(--soft);
@@ -140,7 +134,7 @@ p {
     font-weight: 600;
 }
 
-.education-school, .college-block, .university-block {
+.education-school, .college-block, .university-block, .project-card {
     background-color: var(--surface);
     padding: 1.5rem;
     border-radius: 12px;
@@ -154,13 +148,13 @@ p {
     box-shadow: 0 4px 8px rgba(0,0,0, 0.1);
 }
 
-.subjects ul, .skills ul, .books ul, .goals ul {
+.subjects ul, .skills ul, .books ul, .goals ul, .facts__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
 }
 
-.subjects li, .skills li, .goals li {
+.subjects li, .skills li, .goals li, .facts__list li {
     background-color: var(--surface);
     border: 1px solid var(--line);
     padding: 1.25rem;
@@ -359,6 +353,35 @@ p {
     margin-bottom: 0.5rem;
     color: var(--accent);
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery__item {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.gallery__item figcaption {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+}
+
 
 .goals__list {
     display: grid;
