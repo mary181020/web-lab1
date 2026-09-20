@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-
     <meta charset="UTF-8">
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <meta name="description" content = "Студентське портфоліо">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Студентське портфоліо Марічки Стець">
+
+    <meta property="og:title" content="Портфоліо — Марічка Стець">
+    <meta property="og:description" content="Студентське портфоліо : проєкти, навички та контакти.">
+    <meta property="og:image" content="myphoto.jpg">
+
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/style.css">
     <title>My portfolio</title>
@@ -14,23 +18,31 @@
     <header class="site-header">
         <a class="site-logo" href="#main">Моє портфоліо</a>
         <nav class="site-nav" aria-label="Головне меню">
-            <ul class ="site-nav__list">
+            <ul class="site-nav__list">
                 <li><a href="#about" aria-current="page">Про мене</a></li>
                 <li><a href="#skills">Навички</a></li>
                 <li><a href="#contacts">Контакти</a></li>
             </ul>
         </nav>
     </header>
-    <main class="content" id = "main">
+    <main class="content" id="main">
         <section class="about" id="about">
             <h2>Про мене</h2>
-            <div class ="about__container">
-                <img class="about__photo" src="img/myphoto.jpg" alt="Моє фото" width="300" height="300" height="300" loading="lazy">
+            <div class="about__container">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="img/myphoto.jpg">
+                    <img class="about__photo" src="img/myphoto.jpg" alt="Моє фото" width="300" height="300" loading="lazy">
+                </picture>
+
                 <div class="about__content">
-                    <p class="about__lead"> Привіт!Я Марічка,студентка спеціальності Прикладна математика. Це моє персональне портфоліо!</p></p>
-                    <address class="about-contacts">
-                        <p>Контакти: <a href="malito:mariia.stets@lnu.edu.ua">mariia.stets@lnu.edu.ua</a></p>
-                    </address>
+                    <p class="about__lead">Привіт! Я Марічка, студентка спеціальності Прикладна математика. Це моє персональне портфоліо!</p>
+                    <section class="contacts" id="contacts">
+                        <h2>Контакти та зв'язок</h2>
+                        <address class="contacts-list">
+                            <p><strong>Електронна пошта:</strong> <a href="mailto:mariia.stets@lnu.edu.ua">mariia.stets@lnu.edu.ua</a></p>
+                            <p><strong>Телефон:</strong> <a href="tel:+380685808881">+380685808881</a></p>
+                        </address>
+                    </section>
                 </div>
             </div>
         </section>
@@ -72,50 +84,116 @@
         </section>
         <section class="skills" id="skills-section">
             <h2>Навички</h2>
-            <p>Мій технічний стек та м'які навички (soft skills), які допомагають у навчанні та розробці:</p>
-            <ul>
-                <li><strong>C++ (Об'єктно-орієнтоване програмування)</strong> — впевнене написання структурованого коду, робота зі структурами даних та алгоритмами.</li>
-                <li><strong>C# та WPF</strong> — розробка десктопних застосунків, побудова інтерфейсів користувача.</li>
-                <li><strong>Git та GitHub</strong> — контроль версій, робота з репозиторіями через командну рядок (Git Bash) та гілками.</li>
+            <p>Мій технічний стек та рівень володіння інструментами:</p>
+            <ul class="skills__list">
+                <li class="skill-item">
+                    <div class="skill__info">
+                        <strong>C++ </strong>
+                    </div>
+                    <div class="skill__bar"><span class="skill__progress" style="width: 60%;"></span></div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill__info">
+                        <strong>C# та WPF</strong>
+                    </div>
+                    <div class="skill__bar"><span class="skill__progress" style="width: 40%;"></span></div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill__info">
+                        <strong>Git та GitHub</strong>
+                    </div>
+                    <div class="skill__bar"><span class="skill__progress" style="width: 85%;"></span></div>
+                </li>
+                <li class="skill-item">
+                    <div class="skill__info">
+                        <strong>Математичне моделювання та аналіз</strong>
+                    </div>
+                </li>
                 <li><strong>Математичне моделювання</strong> — глибока база з прикладної математики, чисельних методів та аналізу.</li>
                 <li><strong>Комунікабельність і командна робота</strong> — вміння працювати в групі над спільними університетськими проєктами та слухати колег.</li>
                 <li><strong>Аналітичне мислення</strong> — здатність розбивати складні проблеми на прості кроки та знаходити ефективні алгоритмічні рішення.</li>
             </ul>
         </section>
-
         <section class="hobbies" id="hobbies">
             <h2>Хобі та захоплення</h2>
-            <p>Те, чим я наповнюю свій вільний час, коли не пишу код і не розв'язую математичні рівняння:</p>
-            <ul>
-                <li><strong>Мережеві ігри (Minecraft)</strong> — обожнюю грати в multiplayer-режимі з друзями та братом, самостійно налаштовуючи віртуальні мережі та збірки.</li>
-                <li><strong>Хоррор-ігри</strong> — захоплююсь атмосферою та сюжетами індивідуальних ігор у жанрі хоррор, які змушують понервувати й полоскотати нерви.</li>
-                <li><strong>Шопінг та стиль</strong> — чудово розслабляюсь, оновлюючи гардероб або експериментуючи з новими трендами й естетикою.</li>
-                <li><strong>Вивчення технологій</strong> — мені щиро цікаво самостійно тестувати нові десктопні програми, середовища розробки та розбиратися, як усе влаштовано «під капотом».</li>
-            </ul>
-        </section>
+            <p>Те, чим я наповнюю свій вільний час:</p>
+            <div class="hobbies__grid">
+                <article class="hobby-card">
+                    <img class="hobby-card__img" src="img/hobby-painting.jpg" alt="Малювання картин за номерами" width="300" height="200" loading="lazy">
+                    <div class="hobby-card__content">
+                        <h3>Картини за номерами</h3>
+                        <p>Чудовий спосіб розслабитися, зосередитися та створити гарну картину власними руками.</p>
+                    </div>
+                </article>
 
-        <!-- Розділ 6: Улюблені книги -->
+                <article class="hobby-card">
+                    <img class="hobby-card__img" src="img/hobby-minecraft.jpg" alt="Гра Minecraft" width="300" height="200" loading="lazy">
+                    <div class="hobby-card__content">
+                        <h3>Мережеві ігри (Minecraft)</h3>
+                        <p>Граю в multiplayer-режимі з близькими, налаштовуючи сервери та створюючи віртуальні світи.</p>
+                    </div>
+                </article>
+
+                <article class="hobby-card">
+                    <img class="hobby-card__img" src="img/hobby-horror.jpg" alt="Хоррор ігри" width="300" height="200" loading="lazy">
+                    <div class="hobby-card__content">
+                        <h3>Хоррор-ігри</h3>
+                        <p>Захоплююсь атмосферними сюжетними іграми в жанрі хоррор, які тримають у напрузі.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
         <section class="books" id="books">
             <h2>Улюблені книги</h2>
             <p>Добірка художніх книжок, які залишили особливий емоційний відгук:</p>
             <div class="books__grid">
                 <article class="book-card">
-                    <img class="book-card__img" src="img/book1.jpg" alt="Обкладинка книги Дівчина, яка читала у метро" width="300" height="450" loading="lazy">
+                    <img class="book-card__img" src="img/book1.jpg" alt="Дівчина, яка читала у метро" width="300" height="450" loading="lazy">
                     <div class="book-card__content">
                         <h3>«Дівчина, яка читала у метро»</h3>
                         <p class="book-card__author">Жозеф Каррере</p>
-                        <p>Добра і затишна історія про те, як випадкові книги здатні змінити долі людей.</p>
+                        <p>Добра історія про те, як випадкові книги здатні змінити долі людей.</p>
                         <a class="book-card__btn" href="https://www.yakaboo.ua/ua/divchina-jaka-chitala-v-metro.html?srsltid=AfmBOorw2Fv0vUw9Pxou_QtZG4GP8EvAsULnE9bATMnnwwXQMSvPpLby" target="_blank" rel="noopener">Замовити книгу</a>
                     </div>
                 </article>
 
                 <article class="book-card">
-                    <img class="book-card__img" src="img/book2.jpg" alt="Обкладинка книги Там, де співають раки" width="300" height="450" loading="lazy">
+                    <img class="book-card__img" src="img/book2.jpg" alt="Там, де співають раки" width="300" height="450" loading="lazy">
                     <div class="book-card__content">
                         <h3>«Там, де співають раки»</h3>
                         <p class="book-card__author">Делія Оуенс</p>
                         <p>Неймовірна атмосфера дикої природи, таємниць та щирої юнацької любові.</p>
                         <a class="book-card__btn" href="https://www.yakaboo.ua/ua/tam-de-spivajut-raki.html?srsltid=AfmBOoo7ZRrYLBiV01lTZbwSyJTP5YzjgJGpx4coq2S_WumnwBEmOQmA" target="_blank" rel="noopener">Замовити книгу</a>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img class="book-card__img" src="img/book3.jpg" alt="Кава з кардамоном" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Кава з кардамоном»</h3>
+                        <p class="book-card__author">Юлія Сочинська</p>
+                        <p>Чуттєвий історичний роман про глибокі почуття та львівську атмосферу.</p>
+                        <a class="book-card__btn" href="https://www.yakaboo.ua/ua/joanna-jagello-kava-z-kardamonom.html?srsltid=AU7gw4VRtnVxgQEZbDcHkNcD7XwqVvA3sdYhgHgWiCyqjp8I2GDPnoG6" target="_blank" rel="noopener">Замовити книгу</a>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img class="book-card__img" src="img/book4.jpg" alt="Вино з окульцями" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Вино з окульцями»</h3>
+                        <p class="book-card__author">Софія Андрухович</p>
+                        <p>Захоплююча історія про смертну дівчину у світі підступних та небезпечних фейрі, повна інтриг і боротьби за владу.</p>
+                        <a class="book-card__btn" href="https://vivat.com.ua/product/zhorstokyi-prynts/?gad_source=1&gad_campaignid=21104512529&gbraid=0AAAAADGtG7E7sa8lDUpdGT04CaoMOeP4f&gclid=CjwKCAjwiL7VBhA-EiwAhZi9EEarbd8T_BbDhx2GJeTFFo4UY0XxXbFy9Nh-ZJZz7RQyBJjN4ONxqBoCxAQQAvD_BwE" target="_blank" rel="noopener">Замовити книгу</a>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img class="book-card__img" src="img/book5.jpg" alt="Пантера Душна" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Пантера Душна»</h3>
+                        <p class="book-card__author">Орнела Ванесс</p>
+                        <p>Продовження неймовірної історії про короля Елрігана та Джуд, де ставки стають ще вищими, а зради — болючішими.</p>
+                        <a class="book-card__btn" href="https://vivat.com.ua/product/lykhyi-korol/?gad_source=1&gad_campaignid=21104512529&gbraid=0AAAAADGtG7E7sa8lDUpdGT04CaoMOeP4f&gclid=CjwKCAjwiL7VBhA-EiwAhZi9ELOKHaYkUXhE1rixDmPTFckZ27lcOaDwT4ib4lx9eLVClecDMlO-kBoCiykQAvD_BwE" target="_blank" rel="noopener">Замовити книгу</a>
                     </div>
                 </article>
             </div>
@@ -158,7 +236,196 @@
                 </article>
             </div>
         </section>
+
+        <section class="media-films" id="films">
+            <h2>Улюблені фільми та серіали</h2>
+            <p>Кінематограф, який надихає, захоплює сюжетами та дарує емоції:</p>
+            <div class="books__grid">
+                <article class="book-card">
+                    <img class="book-card__img" src="img/film1.jpg" alt="Постер фільму Одіссея" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Одіссея» (Фільм)</h3>
+                        <p class="book-card__author">Рік: 1997 | Оцінка: 8/10</p>
+                        <p>Епічна подорож та пригоди, що вражають своєю масштабністю й міфологією.</p>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img class="book-card__img" src="img/film2.jpg" alt="Постер серіалу Гаррі Поттер" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Гаррі Поттер» (Серія фільмів)</h3>
+                        <p class="book-card__author">Рік: 2001–2011 | Оцінка: 10/10</p>
+                        <p>Я щира фанатка цієї магічної історії, яка супроводжувала мене з дитинства!</p>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img class="book-card__img" src="img/film3.jpg" alt="Постер серіалу Менталіст" width="300" height="450" loading="lazy">
+                    <div class="book-card__content">
+                        <h3>«Менталіст» (Серіал)</h3>
+                        <p class="book-card__author">Рік: 2008–2015 | Оцінка: 100000/10</p>
+                        <p> Американський детектив: геніальний консультант завдяки інтуїції розгадує найскладніші справи.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="sports" id="sports">
+            <h2>Спорт та активності</h2>
+            <p>Моя спортивна історія:</p>
+            <ul>
+                <li><strong>Волейбол</strong> — займалася у шкільні роки для загального розвитку та активності.</li>
+                <li><strong>Гнучкість</strong> — в дитинстві займалась легкою атлетикою!</li>
+            </ul>
+        </section>
+
+        <section class="travel" id="travel">
+            <h2>Подорожі</h2>
+            <p>За своє життя, на жаль, дуже не подорожувала, але справді люблю гуляти і досліджувати нові місця довкола.</p>
+            <div class="gallery">
+                <figure class="gallery__item">
+                    <img src="img/travel1.jpg" alt="Закинута будівля" width="400" height="300" loading="lazy">
+                    <figcaption>Цікава заброшка.</figcaption>
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/travel2.jpg" alt="Місцеве озеро" width="400" height="300" loading="lazy">
+                    <figcaption>Затишне озеро в моєму місті для спокійних прогулянок.</figcaption>
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/travel3.jpg" alt="Тиха вулиця" width="400" height="300" loading="lazy">
+                    <figcaption>Тихі вулички, де приємно прогулятися наодинці з думками.</figcaption>
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/travel4.jpg" alt="Паркова зона" width="400" height="300" loading="lazy">
+                    <figcaption>Зона для відпочинку та свіжого повітря.</figcaption>
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/travel5.jpg" alt="Вечірнє місто" width="400" height="300" loading="lazy">
+                    <figcaption>Вечірні вогні мого рідного міста.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2>Проєкти та досягнення</h2>
+            <p>Мій практичний розроблений проєкт:</p>
+            <article class="project-card">
+                <h3>Вебсайт з математичної статистики («ZeroToHero»)</h3>
+                <p><strong>Опис:</strong> Публічний інтерактивний сайт для обробки статистичних даних. Користувач може ввести різну вибірку чисел, після чого отримує базові розрахунки (середнє арифметичне, медіану, розмах тощо).</p>
+                <p><strong>Стек технологій:</strong> HTML5, CSS3, JavaScript .</p>
+                <p><strong>Посилання:</strong> <a href="https://liza-ivaa.github.io/ZeroToHero/" target="_blank" rel="noopener">Відкрити сайт на GitHub Pages</a></p>
+            </article>
+        </section>
+
+        <section class="goals" id="goals">
+            <h2>Цілі на найближчий рік</h2>
+            <p>Мої плани та орієнтири на найближчий час:</p>
+            <ul class="goals__list">
+                <li>
+                    <strong>Подорож за кордон</strong>
+                    <div class="progress-bar"><span style="width: 25%;"></span></div>
+                    <span>Стан: Планування та збір інформації </span>
+                </li>
+                <li>
+                    <strong>Успішно закрити навчальний рік</strong>
+                    <div class="progress-bar"><span style="width: 10%;"></span></div>
+                    <span>Стан: Підготовка до сесії </span>
+                </li>
+                <li>
+                    <strong>Почати займатися танцями</strong>
+                    <div class="progress-bar"><span style="width: 30%;"></span></div>
+                    <span>Стан: Пошук студії </span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="facts" id="facts">
+            <h2>Цікаві факти про мене</h2>
+            <p>Кілька коротких фактів, які краще розкривають мою особистість:</p>
+            <ul class="facts__list">
+                <li>Люблю атмосферу дощових вечорів, коли можна сховатися під пледом і займатися чимось затишним.</li>
+                <li>Маю домашнього улюбленця — кота на ім'я Луна.</li>
+                <li>Працюю репетитором математики вже 3 рік.</li>
+                <li>Вмію сідати на шпагат.</li>
+                <li>Підготувала трьох 200-бальників на НМТ з математики.</li>
+                <li>Вірю, що кожна дрібниця має своє значення, і часто помічаю знаки навколо себе.</li>
+                <li>Вважаю чорну каву найкращим супутником мого життя.</li>
+                <li>Обожнюю настолки або відеоігри в компанії близьких, де можна і посміятися, і полоскотати нерви.</li>
+                <li>Можу розплакатися від дуже зворушливої сценки в мультфільмі чи кіно, навіть якщо сюжет зовсім простий.</li>
+                <li>Мрію відвідати усі країни Європи.</li>
+            </ul>
+        </section>
+
+        <section class="quotes" id="quotes">
+            <h2>Улюблені цитати</h2>
+            <div class="quotes__container">
+                <blockquote class="quote">
+                    <p>«Жити — це найбільша рідкість у світі. Більшість людей просто існують, і не більше.»</p>
+                    <footer>— <cite>Оскар Вайльд</cite></footer>
+                </blockquote>
+                <blockquote class="quote">
+                    <p>«Логіка привеже вас від пункту А до пункту Б, а уява доведе куди завгодно.»</p>
+                    <footer>— <cite>Альберт Ейнштейн</cite></footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="feedback-section" id="feedback">
+            <h2>Зворотний зв'язок</h2>
+            <p>Маєте запитання чи пропозицію? Заповніть форму:</p>
+
+            <form class="contact-form" action="#" method="post">
+                <div class="field">
+                    <label for="form-name">Ім'я</label>
+                    <input type="text" id="form-name" name="name" required minlength="2" maxlength="50" autocomplete="name" placeholder="Ваше ім'я">
+                </div>
+
+                <div class="field">
+                    <label for="form-email">Електронна пошта</label>
+                    <input type="email" id="form-email" name="email" required autocomplete="email" placeholder="you@example.com">
+                </div>
+
+                <div class="field">
+                    <label for="form-topic">Тема звернення</label>
+                    <select id="form-topic" name="topic" required>
+                        <option value="">— оберіть тему —</option>
+                        <option value="cooperation">Співпраця</option>
+                        <option value="studies">Навчання</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="form-message">Повідомлення</label>
+                    <textarea id="form-message" name="message" rows="4" required minlength="10" maxlength="500" placeholder="Ваше повідомлення..."></textarea>
+                </div>
+
+                <div class="field-checkbox">
+                    <label>
+                        <input type="checkbox" name="consent" required>
+                        Погоджуюся на обробку персональних даних
+                    </label>
+                </div>
+
+                <button type="submit">Надіслати</button>
+            </form>
+        </section>
     </main>
+
+    <footer class="site-footer" id="socialmedia">
+        <div class="footer__content">
+            <p class="footer__socials-title">Мої соціальні мережі:</p>
+            <ul class="footer__socials">
+                <li><a href="https://instagram.com/madam.mariy" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.facebook.com/share/19nk5Gs91W/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://t.me/marbusik" target="_blank" rel="noopener">Telegram</a></li>
+                <li><a href="https://github.com/mary181020" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+
+            <p class="footer__copyright">© 2026 Марічка Стець. Усі права захищені.</p>
+
+            <a class="footer__top-link" href="#main">Нагору ↑</a>
+        </div>
+    </footer>
 </div>
 </body>
 </html>
