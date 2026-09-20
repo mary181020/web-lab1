@@ -22,18 +22,18 @@
 
 \### Скриншоти макетів:
 
-\* Мобільний: !\[Мобільний](img/mobile.png)
+\* Мобільний: !\[Мобільний](img/mobile.jpg)
 
-\* Планшет: !\[Планшет](img/tablet.png)
+\* Планшет: !\[Планшет](img/tablet.jpg)
 
-\* Десктоп: !\[Десктоп](img/desktop.png)
+\* Десктоп: !\[Десктоп](img/desktop.jpg)
 
 
 \## 🔍 Перевірка якості
 
-\* \*\*W3C Validator:\*\* !\[Валідатор](img/Validator.png)
+\* \*\*W3C Validator:\*\* !\[Валідатор](img/Validator.jpg)
 
-\* \*\*Google Lighthouse:\*\* !\[Lighthouse](img/Lighthouse.png)
+\* \*\*Google Lighthouse:\*\* !\[Lighthouse](img/Lighthouse.jpg)
 
 
 \## 🤖 Використання ШІ
