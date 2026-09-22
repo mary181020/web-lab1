@@ -3,7 +3,7 @@
     --bg: #ffffff;
     --text: #2c3e50;
     --muted: #6c7a89;
-    --accent: #3a7bd5; 
+    --accent: #3a7bd5;
     --soft: #e8f1fc;
     --line: #d2e3fc;
     --surface: #f4f8fb;
@@ -28,7 +28,15 @@
 body, h1, h2, h3, p, ul, figure {
     margin: 0;
 }
-
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+body {
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
+}
 ul[class], ul {
     list-style: none;
     padding: 0;
@@ -43,11 +51,9 @@ img {
 html {
     scroll-behavior: smooth;
 }
-
-:target {
-    scroll-margin-block-start: 5rem;
+section {
+    scroll-margin-top: 5rem;
 }
-
 body {
     font-family: system-ui, sans-serif;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
@@ -82,11 +88,11 @@ body {
     color: #fff;
     text-decoration: none;
     white-space: nowrap;
-    transition: opacity 200ms ease;
+    transition: opacity 500ms ease;
 }
 
 .site-nav a:hover {
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .site-nav a[aria-current="page"] {
@@ -95,7 +101,7 @@ body {
     padding-bottom: 2px;
 }
 
-h2 {
+h1 {
     font-size: clamp(1.375rem, 1.1rem + 1.4vw, 2.25rem);
     color: var(--accent);
     border-bottom: 2px solid var(--soft);
@@ -125,13 +131,12 @@ p {
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--accent);
-    box-shadow: 0 4px 12px rgba(0,0,0, 0.1);
+    border: 3px solid var(--accent);
 }
 
-.about-contacts a {
+.contacts-list a {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .education-school, .college-block, .university-block, .project-card {
@@ -139,16 +144,14 @@ p {
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--line);
+    border: 2px solid var(--line);
 }
 
 .university-block img {
-    border-radius: 8px;
-    margin-top: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0, 0.1);
+    border-radius: 40px;
 }
 
-.subjects ul, .skills ul, .books ul, .goals ul, .facts__list {
+.subjects ul, .skills ul, .books__grid ul, .goals ul, .facts__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
@@ -160,22 +163,77 @@ p {
     padding: 1.25rem;
     border-radius: 8px;
     border-left: 4px solid var(--accent);
-    box-shadow: 0 2px 4px rgba(0,0,0, 0.05);
 }
 
+.skill-item {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+}
+
+.skill__info {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.skill__bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill__progress {
+    display: block;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 4px;
+}
 .skills li {
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    transition: transform 200ms ease;
 }
 
 .skills li:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(18, 59, 109, 0.1);
 }
 
+.hobbies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.hobby-card {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hobby-card__img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--line);
+}
+
+.hobby-card__content {
+    padding: 1.25rem;
+}
+
+.hobby-card__content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
 
 .books__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
     margin-top: 1rem;
 }
@@ -185,29 +243,25 @@ p {
     border: 1px solid var(--line);
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 .book-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(18, 59, 109, 0.12);
 }
 
 .book-card__img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-bottom: 1px solid var(--line);
+    height: 300px;
+    object-fit: contain;
+    background-color:var(--line);
+    border-bottom: 2px solid var(--line);
 }
 
 .book-card__content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .book-card__author {
@@ -248,18 +302,15 @@ p {
     border-radius: 12px;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .music-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(18, 59, 109, 0.1);
 }
 
 .music-card__img {
     width: 100%;
-    aspect-ratio: 1;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 0.75rem;
@@ -281,78 +332,47 @@ p {
 
 .music-player iframe {
     display: block;
+    width: 100%;
+    height: 160px;
     border: none;
 }
-
-
-.skills__list {
-    display: grid;
-    gap: 1rem;
+.sports-section {
+    margin-top: 3rem;
 }
 
-.skill-item {
-    background-color: var(--surface);
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 12px;
     border: 1px solid var(--line);
-    padding: 1rem 1.25rem;
-    border-radius: 8px;
+    background-color: var(--surface);
 }
 
-.skill__info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+.sports-table {
+    width: 100%;
+    text-align: left;
     font-size: 0.95rem;
 }
 
-.skill__bar {
-    width: 100%;
-    height: 8px;
-    background-color: var(--line);
-    border-radius: 4px;
-    overflow: hidden;
+.sports-table caption {
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    caption-side: top;
 }
 
-.skill__progress {
-    display: block;
-    height: 100%;
-    background-color: var(--accent);
-    border-radius: 4px;
-}
-
-
-.hobbies__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.hobby-card {
-    background-color: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-
-.hobby-card__img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
+.sports-table th,
+.sports-table td {
+    padding: 1rem;
     border-bottom: 1px solid var(--line);
 }
 
-.hobby-card__content {
-    padding: 1.25rem;
+.sports-table th {
+    background-color: var(--bg);
+    color: var(--text);
+    font-weight: 600;
 }
 
-.hobby-card__content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--accent);
-}
 
 .gallery {
     display: grid;
@@ -366,12 +386,11 @@ p {
     border: 1px solid var(--line);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .gallery__item img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -417,6 +436,9 @@ p {
     border-radius: 3px;
 }
 
+.goals .progress-bar span[data-progress="25"] { width: 25%; }
+.goals .progress-bar span[data-progress="10"] { width: 10%; }
+.goals .progress-bar span[data-progress="30"] { width: 30%; }
 
 .quotes__container {
     display: grid;
@@ -425,11 +447,10 @@ p {
 
 .quote {
     background-color: var(--surface);
-    border-left: 4px solid var(--accent);
+    border-left: solid var(--accent);
     padding: 1.25rem 1.5rem;
     border-radius: 0 8px 8px 0;
     font-style: italic;
-    border: 1px solid var(--line);
     border-left-width: 4px;
 }
 
@@ -512,7 +533,7 @@ p {
     text-align: center;
 }
 
-.footer__contacts a,
+
 .footer__socials a,
 .footer__top-link {
     color: #fff;
@@ -568,7 +589,24 @@ p {
         height: 250px;
     }
 }
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(18, 59, 109, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px 10px rgba(18, 59, 109, 0.7);
+        transform: scale(1.03);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(18, 59, 109, 0.4);
+        transform: scale(1);
+    }
+}
 
+.about__photo {
+    animation: pulseGlow 5s infinite ease-in-out;
+}
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
